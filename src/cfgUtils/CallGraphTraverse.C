@@ -5,7 +5,7 @@
 #include "CallGraphTraverse.h"
 #include "cfgUtils.h"
 #include "sageInterface.h"
-#include "midend/programAnalysis/CallGraphAnalysis/CallGraph.h"
+#include "CallGraph.h"
 using namespace SageInterface;
 
 #include <set>
