@@ -5,7 +5,6 @@
 #include "graphIterator.h"
 #include "cfgUtils.h"
 #include "CallGraphTraverse.h"
-#include "sight.h"
 
 namespace fuse {
 class Analysis;

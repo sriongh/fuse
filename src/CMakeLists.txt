@@ -1,4 +1,4 @@
-set(fuse_sources
+set(fuse_core
   abstraction/abstract_object.C
   abstraction/abstract_object_map.C
   abstraction/abstract_object_set.C
@@ -36,8 +36,13 @@ set(fuse_sources
   compositionalTestAnalysis.C
 )
 
+if(SIGHT_DEBUG)
+  set(fuse_sight_widget sight/widgets/ats_graph_structure.C)
+endif()
+
 add_executable(fuse
-  ${fuse_sources}
+  ${fuse_core}
+  ${fuse_sight_widget}
 )
 
 target_include_directories(fuse
@@ -46,7 +51,6 @@ target_include_directories(fuse
   analysis/
   cfgUtils/
   lattice/
-  sight/
   simpleAnalyses/
   state/
 )
@@ -56,3 +60,47 @@ set_target_properties(fuse
   COMPILE_FLAGS ${Rose_CXX_FLAGS}
   LINK_FLAGS ${Rose_LDFLAGS}
 )
+
+if(SIGHT_DEBUG)
+  target_include_directories(fuse
+    PUBLIC
+    sight/widgets/
+    ${SIGHT_INCLUDE_DIR}
+    ${SIGHT_PAPI_INCLUDE_DIR}
+    ${SIGHT_WIDGETS_DIR}
+  )
+else()
+  target_include_directories(fuse
+    PUBLIC
+    sight/
+  )
+endif()
+
+if(SIGHT_DEBUG)
+  target_link_libraries(fuse
+    Sight::SightStructure
+    Sight::SightCommon
+  )
+
+  set(fuse_sight_layout sight/widgets/ats_graph_layout.C)
+  add_executable(fuseLayout ${fuse_sight_layout})
+  target_include_directories(fuseLayout
+    PUBLIC
+    sight/widgets/
+    ${SIGHT_INCLUDE_DIR}
+    ${SIGHT_PAPI_INCLUDE_DIR}
+    ${SIGHT_WIDGETS_DIR}
+  )
+  set_target_properties(fuseLayout
+    PROPERTIES
+    COMPILE_FLAGS ${Rose_CXX_FLAGS}
+    LINK_FLAGS ${Rose_LDFLAGS}
+  )
+  target_link_libraries(fuseLayout
+    Sight::SightLayout
+  )
+  target_compile_definitions(fuse
+    PUBLIC
+    FUSE_LAYOUT="${CMAKE_CURRENT_BINARY_DIR}/fuseLayout"
+  )
+endif()

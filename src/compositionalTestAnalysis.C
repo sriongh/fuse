@@ -20,6 +20,10 @@ using namespace boost::xpressive;
 #define STR1(x) #x
 #define STR(x) STR1(x)
 
+#ifndef FUSE_LAYOUT
+#define FUSE_LAYOUT "fuseLayout"
+#endif
+
 void FuseInit(int argc, char** argv) {
 #ifndef DISABLE_SIGHT
   // Command to set up the enviroment variable to find the binary fuseLayout
@@ -29,7 +33,7 @@ void FuseInit(int argc, char** argv) {
   // is top of the build tree
   // If fuse fails to find fuseLayout set up this environment variable appropriately.
 
-  setenv("SIGHT_LAYOUT_EXEC", (sight::txt()<<STR(ROSE_PREFIX)<<"/projects/fuse/src/fuseLayout").c_str(), 1);
+  setenv("SIGHT_LAYOUT_EXEC", (sight::txt()<<FUSE_LAYOUT).c_str(), 1);
 
   std::string title = (sight::txt() << "Process " << " Debug Output").c_str();
   std::string workdir = (sight::txt() << "dbg").c_str();

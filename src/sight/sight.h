@@ -1,5 +1,8 @@
 #pragma once
-//#include "sight.h"
+
+#ifndef DISABLE_SIGHT
+#define DISABLE_SIGHT
+#endif
 //
 //// Applications that wish to disable Sight completely #define DISABLE_SIGHT
 #ifdef DISABLE_SIGHT
