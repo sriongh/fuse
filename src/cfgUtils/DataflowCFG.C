@@ -1,6 +1,6 @@
+#include "sage3basic.h"
 #include "DataflowCFG.h"
 #include "cfgUtils.h"
-#include "sage3basic.h"
 #include <cassert>
 using namespace std;
 #include "sight.h"

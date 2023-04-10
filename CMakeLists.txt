@@ -5,7 +5,7 @@ list(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake/modules)
 #Global cmake properties
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
-set(SIGHT_DEBUG CACHE BOOL ON)
+set(SIGHT_DEBUG CACHE BOOL OFF)
 
 find_package(Rose)
 

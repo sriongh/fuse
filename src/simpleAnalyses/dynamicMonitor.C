@@ -1,11 +1,10 @@
 #include <boost/foreach.hpp>
 using namespace std;
 
-#include "dynamicMonitor.h"
-
 #include "Rose/StringUtility.h"
 #include "sageBuilder.h"
 #include "sageInterface.h"
+#include "dynamicMonitor.h"
 
 using namespace SageInterface;
 using namespace SageBuilder;

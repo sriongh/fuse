@@ -53,8 +53,8 @@ class FuseAnnotTraversal : public AstSimpleProcessing {
   std::map<ComposedAnalysis *, int> assignOpConstantFirstAnalysisCountMap;
 
 public:
-  FuseAnnotTraversal(list<ComposedAnalysis *> sanalyses);
-  list<ComposedAnalysis *> getConstantPropagation();
+  FuseAnnotTraversal(std::list<ComposedAnalysis *> sanalyses);
+  std::list<ComposedAnalysis *> getConstantPropagation();
   void visit(SgNode *sgn);
   ~FuseAnnotTraversal();
   void printConstantCountMapStats();

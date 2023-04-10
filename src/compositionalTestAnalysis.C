@@ -1,3 +1,4 @@
+#include "sage3basic.h"
 #include "AnalysisAstAttribute.h"
 #include "call_context_sensitivity_analysis.h"
 #include "compose.h"
@@ -6,7 +7,6 @@
 #include "dead_path_elim_analysis.h"
 #include "fuseCommandParser.h"
 #include "pointsToAnalysis.h"
-#include "sage3basic.h"
 #include "saveDotAnalysis.h"
 #include "sight.h"
 #include "tight_composer.h"

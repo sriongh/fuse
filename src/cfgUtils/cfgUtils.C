@@ -1,7 +1,7 @@
+#include "sage3basic.h"
 #include "CallGraphTraverse.h"
 #include "VirtualCFGIterator.h"
 #include "cfgUtils.h"
-#include "sage3basic.h"
 #include "sight.h"
 #include <boost/make_shared.hpp>
 #include <iostream>

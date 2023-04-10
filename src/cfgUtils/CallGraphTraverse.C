@@ -1,10 +1,10 @@
 #ifndef CALL_GRAPH_TRAVERSE_C
 #define CALL_GRAPH_TRAVERSE_C
 
+#include "sage3basic.h"
 #include "CallGraph.h"
 #include "CallGraphTraverse.h"
 #include "cfgUtils.h"
-#include "sage3basic.h"
 #include "sageInterface.h"
 using namespace SageInterface;
 
