@@ -4,8 +4,8 @@ using namespace std;
 
 #include "abstract_object.h"
 #include "compose.h"
-#include "sight.h"
 #include <iostream>
+#include "sight.h"
 
 namespace fuse {
 

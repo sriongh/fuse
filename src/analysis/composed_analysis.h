@@ -5,13 +5,13 @@
 #include "analysis.h"
 #include "lattice.h"
 #include "nodeState.h"
-#include "sight.h"
 #include "ssa.h"
 #include <boost/shared_ptr.hpp>
 #include <map>
 #include <set>
 #include <string>
 #include <vector>
+#include "sight.h"
 
 namespace fuse {
 

@@ -1,9 +1,9 @@
-#include "ats_graph_structure.h"
+#include "sage3basic.h"
 #include "compose.h"
 #include "partitions.h"
-#include "sage3basic.h"
 #include "saveDotAnalysis.h"
 #include <boost/algorithm/string/replace.hpp>
+#include "ats_graph_structure.h"
 #include <fstream>
 #include <sstream>
 

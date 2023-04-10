@@ -5,12 +5,12 @@
 #include "sage3basic.h"
 using namespace std;
 
-#include "sight.h"
 #include "ssa.h"
 #include "stx_analysis.h"
 #include "tight_composer.h"
 #include <algorithm>
 #include <boost/enable_shared_from_this.hpp>
+#include "sight.h"
 
 using namespace boost;
 
