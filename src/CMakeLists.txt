@@ -45,6 +45,12 @@ add_executable(fuse
   ${fuse_sight_widget}
 )
 
+target_compile_definitions(fuse
+  PUBLIC
+  -DFUSE_START_FROM_MAIN -DFUSE_SKIP_LIB_GLOBAL_DECLS
+)  
+
+
 target_include_directories(fuse
   PUBLIC
   abstraction/
