@@ -1,18 +1,17 @@
 #include "rose.h"
 
-int main( int argc, char * argv[] ) 
-   {
+int main(int argc, char *argv[]) {
   // Initialize and check compatibility. See Rose::initialize
-     ROSE_INITIALIZE;
+  ROSE_INITIALIZE;
 
   // Build the AST used by ROSE
-     SgProject* project = frontend(argc,argv);
+  SgProject *project = frontend(argc, argv);
 
   // Run internal consistency tests on AST
-     AstTests::runAllTests(project);
+  AstTests::runAllTests(project);
 
   // Insert your own manipulation of the AST here...
 
   // Generate source code from AST and call the vendor's compiler
-     return backend(project);
+  return backend(project);
 }
