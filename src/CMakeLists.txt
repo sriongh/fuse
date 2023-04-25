@@ -64,7 +64,10 @@ target_include_directories(fuse
 set_target_properties(fuse
   PROPERTIES
   COMPILE_FLAGS ${Rose_CXX_FLAGS}
-  LINK_FLAGS ${Rose_LDFLAGS}
+)
+
+target_link_libraries(fuse
+  Rose::Rose
 )
 
 if(SIGHT_DEBUG)
