@@ -495,9 +495,10 @@ DeadPathElimPartEdge::DeadPathElimPartEdge(PartEdgePtr NodeStateLocPartEdge,
 }
 
 DeadPathElimPartEdge::DeadPathElimPartEdge(const DeadPathElimPartEdge &that)
-    : Lattice(that.latPEdge), FiniteLattice(that.latPEdge),
-      PartEdge((const PartEdge &)that), src(that.src), tgt(that.tgt),
-      level(that.level) {
+  : Lattice(that.getNodeStateLocPartEdge()),
+    FiniteLattice(that.getNodeStateLocPartEdge()),
+    PartEdge((const PartEdge &)that), src(that.src), tgt(that.tgt),
+    level(that.level) {
   cache_getOperandPartEdge = that.cache_getOperandPartEdge;
   cache_getPredicateValue = that.cache_getPredicateValue;
   cacheInitialized_getPredicateValue = that.cacheInitialized_getPredicateValue;
@@ -753,8 +754,10 @@ std::string DeadPathElimPartEdge::str(std::string indent) const {
       << " ==&gt; "
       << (tgt ? tgt->str(indent + "&nbsp;&nbsp;&nbsp;&nbsp;") : "NULL") << ", "
       << endl;
-  oss << indent << "    parent=<" << getInputPartEdge()->str() << "]";
-  oss << indent << "    location=<" << getNodeStateLocPartEdge()->str() << "]";
+  oss << indent << "    parent=<" << getInputPartEdge()->str() << ">\n";
+  oss << indent << "    location=<" << getNodeStateLocPartEdge()->str() << ">\n";
+  oss << indent << " getNodeStateLocPartEdge()=<"
+      << getNodeStateLocPartEdge()->str() << ">";
   recursive = false;
 
   return oss.str();
