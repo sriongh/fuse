@@ -2288,7 +2288,12 @@ void FWDataflow::remapML(PartEdgePtr fromPEdge, vector<Lattice *> &lat) {
 #ifndef DISABLE_SIGHT
     SIGHT_VERB(dbg << "lat[" << i << "]=" << (lat[i] ? lat[i]->str() : "NULL")
                    << endl,
-               1, composedAnalysisDebugLevel)
+               1, composedAnalysisDebugLevel);
+    SIGHT_VERB(dbg << "lat[" << i << "]->getPartEdge()=" <<
+               (lat[i]? lat[i]->getPartEdge()->str() : "NULL")
+               << endl,
+               1, composedAnalysisDebugLevel);
+
 #endif
 
     /*cout << "FWDataflow::remapML()

@@ -426,7 +426,10 @@ void setArgByRef2ParamMap(PartEdgePtr callEdge, SgFunctionCallExp *call,
                           Composer *composer, ComposedAnalysis *client) {
 #ifndef DISABLE_SIGHT
   SIGHT_VERB_DECL(scope, ("setArgByRef2ParamMap", scope::medium), 1,
-                  partitionsDebugLevel)
+                  partitionsDebugLevel);
+  SIGHT_VERB(dbg << "callEdge=" << callEdge->str(),
+             1, partitionsDebugLevel);
+
 #endif
   std::set<CFGNode> exitNodes;
   assert(callEdge->source()->mustFuncExit(exitNodes));
