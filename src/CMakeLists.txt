@@ -68,6 +68,10 @@ set_target_properties(fuse
 
 target_link_libraries(fuse
   Rose::Rose
+  quadmath
+  rt
+  dl
+  m
 )
 
 if(SIGHT_DEBUG)
